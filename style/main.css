@@ -1,0 +1,46 @@
+p {
+  margin: 20px;
+  padding: 10px; }
+
+#outer > p {
+  color: #ccc; }
+
+#outer p {
+  background: pink; }
+
+/*
+	Example of inheritance.
+*/
+#third {
+  background: red; }
+
+#third {
+  background: blue; }
+
+/*
+	Mixin example.
+*/
+#fourth {
+  font-size: 5em; }
+
+/* 
+	Mixin example with math (variables and operators)
+*/
+#fifth {
+  background: #ccc;
+  padding: 40px; }
+
+/*
+	Mixing units works if Sass can convert one to the other
+	px and ems -> no good
+	px and cms -> works! (weird)
+*/
+#sixth {
+  margin-top: 30px;
+  background: #ccc;
+  padding: 95.59055px; }
+
+blockquote {
+  background: yellow;
+  font-family: cursive;
+  color: green; }

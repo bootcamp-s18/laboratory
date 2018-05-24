@@ -1,0 +1,74 @@
+p {
+	margin: 20px;
+	padding: 10px;
+}
+
+#outer > p {
+	color: #ccc;
+}
+
+#outer p {
+	background: pink;
+}
+
+// This comment will not show up in main.css
+
+/*
+	Example of inheritance.
+*/
+
+%bg1 {
+	background: red;
+}
+
+%bg2 {
+	background: blue;
+}
+
+#third {
+	@extend %bg1;
+	@extend %bg2;
+}
+
+/*
+	Mixin example.
+*/
+
+@mixin textsize($initialsize) {
+	font-size: $initialsize;
+}
+
+#fourth {
+	@include textsize(5em);
+}
+
+/* 
+	Mixin example with math (variables and operators)
+*/
+
+@mixin quadruplepadding($pixels) {
+	padding: 4 * $pixels;
+}
+
+#fifth {
+	background: #ccc;
+	@include quadruplepadding(10px);
+}
+
+/*
+	Mixing units works if Sass can convert one to the other
+	px and ems -> no good
+	px and cms -> works! (weird)
+*/
+
+@mixin addpadding($yours) {
+	padding: $yours + 2cm;
+}
+
+#sixth {
+	margin-top: 30px;
+	background: #ccc;
+	@include addpadding(20px);
+}
+
+@import 'blockquote';
